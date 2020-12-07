@@ -31,6 +31,12 @@ We are going to run a couple SQL queries and put the answers in the "Query Respo
 
 2. Find the most popular area code in the `usersContact` table. 
   * Hint: SUBSTR, GROUP BY
+  
+  SELECT SUBSTR(phone1,1, 3) AS areaCode,
+      COUNT(*) total
+  FROM usersContact
+  GROUP BY SUBSTR(phone1,1, 3)
+  ORDER BY total DESC
 
 3. Find the MIN first_name, the county, and a count of all users in that county for counties with more than 10 users. There will be four results. List the last one. 
   * Hint: MIN, COUNT, JOIN, GROUP BY, HAVING
@@ -39,13 +45,13 @@ We are going to run a couple SQL queries and put the answers in the "Query Respo
 ## Query Responses
 
 1. Sums
-  * AK:
-  * CT
-  * TX:
-  * WY:
+  * AK: 1422
+  * CT 999
+  * TX: 2145
+  * WY: 1271
 
 2.
-  * Area code:
+  * Area code: 973
 
 3.
   * first_name:
